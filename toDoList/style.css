@@ -40,3 +40,8 @@ ul{
 .remove-btn:hover{
     background-color: lightblue;
 }
+
+.completed-green{
+    color: green;
+    font-weight: bold;
+}

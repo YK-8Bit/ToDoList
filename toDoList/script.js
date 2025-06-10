@@ -8,6 +8,8 @@ addButton.addEventListener("click", () => {
     if(taskText === ""){ //checks to see if the user has enttered anything
      alert("you must enter something")
      return;
+    }else{
+        alert("task has been succesfuly added!");
     } 
 
    const taskItem = document.createElement("li"); //created a new li element and stored it within task item
@@ -19,6 +21,12 @@ addButton.addEventListener("click", () => {
    });
    taskItem.textContent = taskText; //we then set the li element to have the text  within the textbox 
    taskItem.appendChild(btnRemove); //putting the button inside of the li making it appear
+
+   taskItem.addEventListener("click", () =>{ //listens for the li element is clicked
+    taskItem.classList.add("complete-green"); //adds a class with the name of completed-green to the li eleemnt 
+    taskItem.classList.toggle("completed-green") //this allows for the colour to change betwween black and green
+   });
+
    taskList.appendChild(taskItem); //we have now put li element and its value inside of the Ul element 
    input.value="";//resets the value inside the textbox
 });
@@ -37,3 +45,10 @@ search.addEventListener("input", () =>{ //listens for when something is typped i
     }
 
 });
+
+const remove = document.getElementById("btnClear");
+remove.addEventListener("click", () => { //listening for when it the clear all button gets clicked
+    taskList.innerHTML = ""; //removees the inner html for the ul eleemnt
+    alert("all tasks have been removed")
+});
+
