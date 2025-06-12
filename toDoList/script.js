@@ -11,7 +11,7 @@ addButton.addEventListener("click", () => {
     }else{
         alert("task has been succesfuly added!");
     } 
-
+    
    const taskItem = document.createElement("li"); //created a new li element and stored it within task item
    const btnRemove = document.createElement("button");//creates a button
    btnRemove.textContent = "Remove";//gives the button the text of remove 
